@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+}
+.error {
+    margin-top: 5%;
+}
+img {
+    width: 55%;
+}
+button {
+    width: 20rem;
+    height: 6rem;
+    border-radius: 4rem;
+    border: 0.15rem black solid;
+}
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+button:hover {
+background-color: rgba(45, 8, 80, 0.642);
+text-decoration: underline;
+transition: 1s ease-in-out;
+cursor: pointer;
+}
