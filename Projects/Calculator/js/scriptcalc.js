@@ -7,18 +7,20 @@ class Calculator {
 		this.clear();
 	}
 	clear() {
-		this.currentDigitTextElement = '';
-		this.previousDigitTextElement = '';
+		this.currentDigit = 0;
+		this.previousDigit = '';
 		this.operation = undefined;
 	}
 	delete() {
 		this.currentDigit = this.currentDigit.toString().slice(0, -1);
 	}
 	appendNumber(number) {
-		if (number === '.' && this.currentDigitTextElement.includes('.')) return;
-		this.currentDigit = this.currentDigit.toString() + number.toString();
+		if (number === '.' && this.currentDigit.toString().includes('.')) return;
+		this.currentDigit = parseFloat(
+			this.currentDigit.toString() + number.toString()
+		);
 	}
-	chooseoperation(operation) {
+	chooseOperation(operation) {
 		if (this.currentDigit === '') return;
 		if (this.previousDigit !== '') {
 			this.compute();
@@ -30,7 +32,7 @@ class Calculator {
 	compute() {
 		let computation;
 		const prev = parseFloat(this.previousDigit);
-		const current = parseFloat(this.currentDig);
+		const current = parseFloat(this.currentDigit);
 		if (isNaN(prev) || isNaN(current)) return;
 		switch (this.operation) {
 			case '+':
@@ -42,13 +44,13 @@ class Calculator {
 			case '*':
 				computation = prev * current;
 				break;
-			case '&divide;':
+			case '÷':
 				computation = prev / current;
 				break;
 			default:
 				return;
 		}
-		this.currentDigit = computation;
+		this.currentDigit = computation.toString();
 		this.operation = undefined;
 		this.previousDigit = '';
 	}
@@ -65,7 +67,7 @@ class Calculator {
 			});
 		}
 		if (decimalDigits != null) {
-			return `${integerDisplay}, ${decimalDigits}`;
+			return `${integerDisplay}${decimalDigits ? ',' + decimalDigits : ''}`;
 		} else {
 			return integerDisplay;
 		}
