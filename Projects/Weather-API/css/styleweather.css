@@ -10,7 +10,7 @@ body{
     border: 2px white solid;
     border-radius: 10px;
     padding: 1rem;
-    width: 40%;
+    width: 60%;
     margin: auto;
 }
 .section-one {
@@ -22,6 +22,7 @@ body{
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    font-size: 2rem;
 }
 .weather-update {
     margin-right: 5px;
