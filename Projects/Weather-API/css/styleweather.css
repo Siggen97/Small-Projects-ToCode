@@ -8,11 +8,20 @@ body{
     font-size: 1.5rem;
     color: white;
     height: 100vh;
+    background: linear-gradient(to left, #bee9e8, #62b6cb);
+}
+.section-one {
+    padding: 1rem;
+    font-size: 1rem;
+}
+.section-two {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(to right, #bee9e8, #cae9ff);
+}
+.weather-update {
+    margin-right: 5px;
 }
 .location,
  .temperature{
@@ -22,6 +31,7 @@ body{
     justify-content: space-around;
     align-items: center;
 }
+
 .temperature {
     flex-direction: column;
 }
@@ -32,4 +42,9 @@ body{
 }
 .degree-section span {
     margin: 10px;
+}
+.icon-description{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
 }

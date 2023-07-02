@@ -6,6 +6,8 @@ window.addEventListener('load', () => {
     let temperatureDescription = document.querySelector('.temperature-description');
     let temperatureDegree = document.querySelector('.temperature-degree');
     let locationTimezone = document.querySelector('.location-timezone');
+    let weatherIcon = document.querySelector('.weather-icon');
+    let lastUpdate = document.querySelector('.lastupdate');
 
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition((position) => {
@@ -21,11 +23,15 @@ window.addEventListener('load', () => {
 				})
 				.then((data) => {
 					console.log(data);
-                    const {temp_c, temp_f } = data.current;
-                    const {name,  } = data.location;
+                    const {temp_c, temp_f, condition, last_updated } = data.current;
+                    const {name, tz_id, } = data.location;
 
                     temperatureDegree.textContent = `${temp_c}°C / ${temp_f}°F`;
-                    locationTimezone.textContent = name
+                    locationTimezone.textContent = name + ', ' + tz_id
+                    temperatureDescription.textContent = condition.text
+                    weatherIcon.src = condition.icon
+                    lastUpdate.textContent = last_updated
+
 
 				});
 		});
