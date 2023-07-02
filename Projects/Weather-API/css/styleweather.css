@@ -1,14 +1,17 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 body{
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5rem;
     color: white;
     height: 100vh;
     background: linear-gradient(to left, #bee9e8, #62b6cb);
+}
+.weather-container {
+    border: 2px white solid;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 40%;
+    margin: auto;
 }
 .section-one {
     padding: 1rem;
