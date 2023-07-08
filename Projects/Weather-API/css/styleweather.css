@@ -41,9 +41,10 @@ input:hover {
 }
 .weather-container {
     border-radius: 10px;
-    padding: 1rem;
-    width: 60%;
+    padding: 3rem;
+    width: auto;
     margin: auto;
+    margin-top: 3rem;
 }
 .section-one {
     padding: 0.3rem;
