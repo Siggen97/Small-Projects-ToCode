@@ -1,0 +1,83 @@
+/** @format */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	font-family: 'Times New Roman', Times, serif;
+	font-weight: bold;
+	font-size: 1.4rem;
+}
+:root {
+	--hue-neutral: 200;
+	--hue-wrong: 0;
+	--hue-correct: 145;
+}
+body {
+	--hue: var(--hue-neutral);
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: hsl(var(--hue), 100%, 20%);
+}
+body.correct {
+	--hue: var(--hue-correct);
+}
+body.wrong {
+	--hue: var(--hue-wrong);
+}
+.quiz-card {
+	width: 800px;
+	max-width: 80%;
+	background-color: white;
+	border-radius: 5px;
+	padding: 10px;
+	/* 10px is the blur effect, and 2px is how far out we want the shadow */
+	box-shadow: 0 0 10px 2px;
+}
+.multiple-choice-btn {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	gap: 1rem;
+	margin: 2rem 0;
+}
+.choice-btn {
+	--hue: var(--hue-neutral);
+    border: 3px solid hsl(var(--hue), 100%, 20%);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    background-color: hsl(var(--hue), 100%, 30%);
+    color: white;
+    outline: none;
+    font-weight: normal;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start-btn, .next-btn {
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: white;
+    outline: none;
+    background-color: hsl(var(--hue), 100%, 40%);
+    border: 3px solid hsl(var(--hue), 100%, 20%);
+}
+.btn:hover {
+    border-color: black;
+    cursor: pointer;
+}
+.btn.wrong {
+    --hue: var(--hue-wrong);
+}
+.btn.correct {
+    --hue: var(--hue-correct);
+}
+.hide {
+    display: none;
+}
