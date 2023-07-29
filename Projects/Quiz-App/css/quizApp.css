@@ -76,10 +76,10 @@ button:hover {
 .btn:hover {
     border-color: black;
 }
-.btn.wrong {
+.choice-btn.wrong {
     --hue: var(--hue-wrong);
 }
-.btn.correct {
+.choice-btn.correct {
     --hue: var(--hue-correct);
 }
 .hide {
